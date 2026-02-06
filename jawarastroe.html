@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jawa Store - Toko Peralatan Silat Terpercaya</title>
+    <meta
+      name="description"
+      content="Jawa Store menyediakan berbagai peralatan silat lengkap dengan informasi akurat dan terpercaya untuk latihan dan kompetisi."
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: #d32f2f;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      nav {
+        background-color: #333;
+        padding: 10px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav li {
+        margin: 0 15px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      section {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      article {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: white;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #d32f2f;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #b71c1c;
+      }
+      #keranjang {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      #modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      input,
+      textarea {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="keranjang">Keranjang: 0 item</div>
+
+    <header>
+      <h1>Selamat Datang di Jawa Store</h1>
+      <p>
+        Toko online terpercaya untuk peralatan silat lengkap. Kami menyediakan
+        produk berkualitas tinggi dengan informasi akurat tentang spesifikasi,
+        bahan, dan penggunaan.
+      </p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#produk">Produk Kami</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section id="produk">
+      <h2>Daftar Produk Peralatan Silat</h2>
+      <p>
+        Berikut adalah berbagai peralatan silat yang kami jual, lengkap dengan
+        deskripsi akurat berdasarkan standar seni bela diri silat Indonesia.
+      </p>
+
+      <article>
+        <h3>Sarung Silat</h3>
+        <p>
+          Bahan: Kain katun atau polyester berkualitas tinggi. Panjang: 2-3
+          meter. Digunakan untuk latihan dasar silat seperti pukulan dan
+          tendangan. Harga: Rp 150.000.
+        </p>
+        <p>
+          Informasi akurat: Sarung ini tahan lama dan sesuai standar PSSI
+          (Persatuan Silat Seluruh Indonesia) untuk pemula hingga mahir.
+        </p>
+        <button onclick="tambahKeranjang('Sarung Silat')">
+          Tambah ke Keranjang
+        </button>
+        <button
+          onclick="
+            lihatDetail(
+              'Sarung Silat: Bahan katun, panjang 2-3m, ideal untuk latihan dasar.',
+            )
+          "
+        >
+          Lihat Detail
+        </button>
+      </article>
+
+      <article>
+        <h3>Tongkat Silat (Toya)</h3>
+        <p>
+          Bahan: Kayu jati atau rotan. Panjang: 1-1.5 meter. Digunakan untuk
+          teknik pertahanan dan serangan. Harga: Rp 200.000.
+        </p>
+        <p>
+          Informasi akurat: Tongkat ini ringan namun kuat, ideal untuk latihan
+          silat tradisional seperti pencak silat.
+        </p>
+        <button onclick="tambahKeranjang('Tongkat Silat')">
+          Tambah ke Keranjang
+        </button>
+        <button
+          onclick="
+            lihatDetail(
+              'Tongkat Silat: Bahan kayu jati, panjang 1-1.5m, untuk teknik pertahanan.',
+            )
+          "
+        >
+          Lihat Detail
+        </button>
+      </article>
+
+      <article>
+        <h3>Sabuk Silat</h3>
+        <p>
+          Bahan: Kain tebal dengan tingkatan warna (putih hingga hitam).
+          Digunakan sebagai simbol tingkat kemahiran. Harga: Rp 50.000.
+        </p>
+        <p>
+          Informasi akurat: Sabuk ini mengikuti sistem sabuk silat nasional,
+          dari pemula hingga guru.
+        </p>
+        <button onclick="tambahKeranjang('Sabuk Silat')">
+          Tambah ke Keranjang
+        </button>
+        <button
+          onclick="
+            lihatDetail(
+              'Sabuk Silat: Bahan kain tebal, tingkatan warna sesuai kemahiran.',
+            )
+          "
+        >
+          Lihat Detail
+        </button>
+      </article>
+
+      <article>
+        <h3>Perlengkapan Pelindung (Body Protector)</h3>
+        <p>
+          Bahan: Busa dan kain sintetis. Ukuran: Universal. Digunakan untuk
+          latihan sparring. Harga: Rp 300.000.
+        </p>
+        <p>
+          Informasi akurat: Pelindung ini memenuhi standar keamanan untuk
+          mencegah cedera selama latihan intensif.
+        </p>
+        <button onclick="tambahKeranjang('Body Protector')">
+          Tambah ke Keranjang
+        </button>
+        <button
+          onclick="
+            lihatDetail(
+              'Body Protector: Bahan busa sintetis, ukuran universal, untuk sparring.',
+            )
+          "
+        >
+          Lihat Detail
+        </button>
+      </article>
+
+      <article>
+        <h3>Pedang Latih Silat (Keris Tiruan)</h3>
+        <p>
+          Bahan: Kayu atau logam ringan. Panjang: 50-70 cm. Digunakan untuk
+          latihan bentuk (jurus). Harga: Rp 250.000.
+        </p>
+        <p>
+          Informasi akurat: Tiruan ini aman untuk latihan dan tidak tajam,
+          sesuai aturan silat modern.
+        </p>
+        <button onclick="tambahKeranjang('Keris Tiruan')">
+          Tambah ke Keranjang
+        </button>
+        <button
+          onclick="
+            lihatDetail(
+              'Keris Tiruan: Bahan kayu, panjang 50-70cm, untuk latihan jurus.',
+            )
+          "
+        >
+          Lihat Detail
+        </button>
+      </article>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Jawa Store</h2>
+      <p>
+        Jawa Store adalah platform terpercaya yang menyediakan peralatan silat
+        asli Indonesia. Semua informasi produk kami akurat dan didasarkan pada
+        standar PSSI serta praktik silat tradisional. Kami berkomitmen untuk
+        mendukung komunitas silat dengan produk berkualitas.
+      </p>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <form id="contactForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <p>
+        Email: info@jawastore.com | Telepon: +62 123 456 789 | Alamat: Jl. Silat
+        No. 1, Jakarta, Indonesia
+      </p>
+    </section>
+
+    <div id="modal">
+      <div id="modal-content">
+        <h3>Detail Produk</h3>
+        <p id="detailText"></p>
+        <button onclick="tutupModal()">Tutup</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2023 Jawa Store. Semua hak cipta dilindungi. Informasi akurat
+        berdasarkan standar silat nasional.
+      </p>
+    </footer>
+
+    <script>
+      let keranjang = 0;
+      function tambahKeranjang(produk) {
+        keranjang++;
+        document.getElementById("keranjang").innerText =
+          `Keranjang: ${keranjang} item`;
+        alert(`${produk} ditambahkan ke keranjang!`);
+      }
+      function lihatDetail(detail) {
+        document.getElementById("detailText").innerText = detail;
+        document.getElementById("modal").style.display = "flex";
+      }
+      function tutupModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Terima kasih! Pesan Anda telah dikirim.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
